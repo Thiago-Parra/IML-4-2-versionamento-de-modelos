@@ -1,0 +1,28 @@
+# Ambientes, credenciais e arquivos locais
+.venv/
+venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# Histórico local do MLflow
+mlflow.db*
+mlartifacts/
+mlruns/
+
+# Configurações e arquivos auxiliares de ferramentas locais
+.agents/
+.codex/
+.aws/
+AGENTS.md
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

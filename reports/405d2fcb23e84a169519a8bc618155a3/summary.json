@@ -1,0 +1,88 @@
+{
+  "code_version": "1.0.0",
+  "settings": {
+    "data_path": "water_potability.csv",
+    "tracking_uri": "sqlite:///mlflow.db",
+    "experiment_name": "water-potability",
+    "model_name": "water-potability-classifier",
+    "random_state": 42,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "n_estimators": 100
+  },
+  "dataset_sha256": "904004bde729bfe3d2e195f46343bceead09e32a0eb95bb8184e7e20e029b2bf",
+  "rows": 3276,
+  "class_counts": {
+    "0": 1998,
+    "1": 1278
+  },
+  "missing_values": {
+    "ph": 491,
+    "Hardness": 0,
+    "Solids": 0,
+    "Chloramines": 0,
+    "Sulfate": 781,
+    "Conductivity": 0,
+    "Organic_carbon": 0,
+    "Trihalomethanes": 162,
+    "Turbidity": 0,
+    "Potability": 0
+  },
+  "train_rows": 2620,
+  "test_rows": 656,
+  "candidates": [
+    {
+      "model": "baseline",
+      "run_id": "b2ffcad412e64324985a550e5c5de033",
+      "cv_f1_mean": 0.4062635791559253,
+      "cv_f1_std": 0.012903071267461123,
+      "cv_roc_auc_mean": 0.5038234736608154,
+      "cv_roc_auc_std": 0.01087555673224485,
+      "cv_balanced_accuracy_mean": 0.5038234736608154,
+      "cv_balanced_accuracy_std": 0.010875556732244832
+    },
+    {
+      "model": "logistic_regression",
+      "run_id": "d428833455bf460181de0e7f9bbb2315",
+      "cv_f1_mean": 0.4155251115260519,
+      "cv_f1_std": 0.02833503214226123,
+      "cv_roc_auc_mean": 0.476757681028486,
+      "cv_roc_auc_std": 0.01806893643804633,
+      "cv_balanced_accuracy_mean": 0.4887798717334628,
+      "cv_balanced_accuracy_std": 0.019322980172519797
+    },
+    {
+      "model": "random_forest",
+      "run_id": "405d2fcb23e84a169519a8bc618155a3",
+      "cv_f1_mean": 0.5499905155953324,
+      "cv_f1_std": 0.01991947814924462,
+      "cv_roc_auc_mean": 0.6955861215601196,
+      "cv_roc_auc_std": 0.010723126927407163,
+      "cv_balanced_accuracy_mean": 0.6430127789608847,
+      "cv_balanced_accuracy_std": 0.008642425332124249
+    }
+  ],
+  "selected_model": "random_forest",
+  "run_id": "405d2fcb23e84a169519a8bc618155a3",
+  "model_uri": "models:/m-0b815c12f4b54feea8bb9d35edbffc47",
+  "registered_model": "water-potability-classifier",
+  "model_version": 1,
+  "test_metrics": {
+    "test_accuracy": 0.6310975609756098,
+    "test_balanced_accuracy": 0.59765625,
+    "test_precision": 0.5327102803738317,
+    "test_recall": 0.4453125,
+    "test_f1": 0.4851063829787234,
+    "test_roc_auc": 0.6610791015624999
+  },
+  "confusion_matrix": [
+    [
+      300,
+      100
+    ],
+    [
+      142,
+      114
+    ]
+  ]
+}

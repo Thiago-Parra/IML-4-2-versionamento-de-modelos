@@ -1,0 +1,22 @@
+name: Verificação do projeto
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar Poetry e dependências
+        run: |
+          python -m pip install poetry==2.4.3
+          poetry install --no-interaction
+      - name: Conferir configuração, código e testes
+        run: |
+          poetry check --lock
+          poetry run ruff check .
+          poetry run ruff format --check .
+          poetry run pytest -q

@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "iml42-water-potability"
+version = "1.0.0"
+description = "Classificação da potabilidade da água com versionamento no MLflow."
+authors = ["Thiago Henrique Parra"]
+readme = "README.md"
+packages = [{ include = "water_potability", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+mlflow = ">=3.1,<4.0"
+pandas = ">=2.2,<3.0"
+scikit-learn = ">=1.6,<2.0"
+matplotlib = ">=3.9,<4.0"
+pydantic = ">=2.10,<3.0"
+pydantic-settings = ">=2.7,<3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.3,<9.0"
+ruff = "0.13.2"
+pre-commit = ">=4.3,<5.0"
+bump2version = "1.0.1"
+
+[tool.poetry.scripts]
+water-potability = "water_potability.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0,<3.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
